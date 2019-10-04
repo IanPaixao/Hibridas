@@ -51,11 +51,12 @@
             </div>
           </div>
         </form>  
-        <a class="waves-effect waves-light btn right"> Calcular </a> 
+        <a class="waves-effect waves-light btn right" onclick="location.href='/index.html'"> Calcular </a> 
       </div>
     </div>
   </div>
   <script>
+    
     var nome = document.getElementById('nome_usuario').value; 
     var peso = document.getElementById('peso_usuario').value;
     var altura = document.getElementById('altura_usuario').value;
@@ -64,4 +65,5 @@
     localStorage.setItem('peso_u', nome);
     localStorage.setItem('altura_u', nome);
   </script>
+
 </body>

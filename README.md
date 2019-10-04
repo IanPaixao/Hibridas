@@ -7,5 +7,5 @@ npm install http-server -g
 
 ## Para rodar
 
-na pasta onde encontra-se o arquivo de index, rodar o comando http-server 
-no browser ir em localhost:8080/index.html
+Na pasta onde encontra-se o arquivo de index, rodar o comando http-server no terminal.
+No browser ir em localhost:8080/index.html

@@ -51,19 +51,26 @@
             </div>
           </div>
         </form>  
-        <a class="waves-effect waves-light btn right" onclick="location.href='/index.html'"> Calcular </a> 
+        <a class="waves-effect waves-light btn right" onclick="calcular_imc()"> Calcular </a> 
+        <!--<img src="https://i1.kknews.cc/SIG=22bdsma/ctp-vzntr/1533900359564624ps5oqrq.jpg" alt="round">-->
       </div>
     </div>
   </div>
   <script>
-    
-    var nome = document.getElementById('nome_usuario').value; 
-    var peso = document.getElementById('peso_usuario').value;
-    var altura = document.getElementById('altura_usuario').value;
-    
-    localStorage.setItem('nome_u', nome);
-    localStorage.setItem('peso_u', nome);
-    localStorage.setItem('altura_u', nome);
-  </script>
+    function calcular_imc(){
+      var nome = document.getElementById('nome_usuario').value; 
+      var peso = document.getElementById('peso_usuario').value;
+      var altura = document.getElementById('altura_usuario').value;
+      var altura_em_m = altura/100
+      var imc = peso / (altura_em_m * altura_em_m);
 
+      localStorage.setItem('nome_usuario', nome);
+      localStorage.setItem('peso_usuario', peso);
+      localStorage.setItem('altura_usuario', altura);
+      localStorage.setItem('imc', imc);
+
+      document.location.href='/conteudo.html';
+    }
+
+  </script>
 </body>

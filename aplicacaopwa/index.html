@@ -1,6 +1,6 @@
 <!doctype html>
 <head lang="pt-BR">
-  <title>Minha primeira PWA</title>
+  <title>Calculadora IMC</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="manifest" href="/manifest.webmanifest" />
@@ -8,25 +8,62 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-title" content="PWA" />
+  <!--
   <link rel="apple-touch-icon" sizes="72x72" href="/imagens/icones/apple-icon-72x72.png" />
   <link rel="apple-touch-icon" sizes="144x144" href="/imagens/icones/apple-icon-144x144.png" />
   <link rel="apple-touch-icon" sizes="152x152" href="/imagens/icones/apple-icon-152x152.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/imagens/icones/apple-icon-180x180.png" />
+  -->
   <link rel="stylesheet" href="/estilos/estilos.css" />
-  <script>
-    navigator.serviceWorker.register('/sw.js');
-
-    fetch('/conteudo.html')
-      .then( function(res) {
-        return res.text();
-      })
-      .then( function(conteudo) {
-        document.getElementById('conteudo').innerHTML = conteudo;
-      });  
-    </script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-  <p><img src="/imagens/icones/android-icon-192x192.png"/></p>
-  <h1>Minha primeira PWA</h1>
-  <div id="conteudo"></div>
+  <div class='container'>
+    <div class='container'>
+      <!--<p><img src="/imagens/icones/android-icon-192x192.png"/></p>-->
+      <h4>Calculadora  Índice de Massa Corporal</h4>
+      <div class="row">
+        <form class="col s12">
+          <!-- nome -->
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="nome_usuario" name="nome" type="text" class="validate">
+              <label for="nome">Digite seu nome. </label>
+            </div>
+          </div>
+          <!-- altura -->
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="altura_usuario" name="altura" type="text" class="validate">
+              <label for="altura">Digite sua altura em centímetros.</label>
+              <span class="helper-text"> Ex: 168 cm</span>
+            </div>
+          </div>
+          <!-- peso -->
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="peso_usuario" name="peso" type="text" class="validate">
+              <label for="peso">Digite seu peso em Kg.</label>
+              <span class="helper-text"> Ex: 48 kg</span>
+            </div>
+          </div>
+        </form>  
+        <a class="waves-effect waves-light btn right"> Calcular </a> 
+      </div>
+    </div>
+  </div>
+  <script>
+    
+    var nome = document.getElementById('nome_usuario').value; 
+    var peso = document.getElementById('peso_usuario').value;
+    var altura = document.getElementById('altura_usuario').value;
+    
+    localStorage.setItem('nome_u', nome);
+    localStorage.setItem('peso_u', nome);
+    localStorage.setItem('altura_u', nome);
+  </script>
+
 </body>

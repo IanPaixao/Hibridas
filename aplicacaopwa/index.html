@@ -1,25 +1,32 @@
 <!doctype html>
 <head lang="pt-BR">
-  <title>Hello There</title>
+  <title>Minha primeira PWA</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="icon" type="image/png" href="/imagens/icones/favicon.ico" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="PWA">
-  <link rel="apple-touch-icon" sizes="72x72" href="/imagens/icones/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/imagens/icones/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/imagens/icones/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/imagens/icones/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" href="./imagens/icones/favicon.ico" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="PWA" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/imagens/icones/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/imagens/icones/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/imagens/icones/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/imagens/icones/apple-icon-180x180.png" />
+  <link rel="stylesheet" href="/estilos/estilos.css" />
   <script>
-    function f() {
-      alert('Hello There!');
-    }
-  </script>
+    navigator.serviceWorker.register('/sw.js');
+
+    fetch('/conteudo.html')
+      .then( function(res) {
+        return res.text();
+      })
+      .then( function(conteudo) {
+        document.getElementById('conteudo').innerHTML = conteudo;
+      });  
+    </script>
 </head>
 <body>
   <p><img src="/imagens/icones/android-icon-192x192.png"/></p>
-  <h1>Revenge of the Sith quote</h1>
-  <p></p><button onclick="f()">Clique aqui</button></p>
+  <h1>Minha primeira PWA</h1>
+  <div id="conteudo"></div>
 </body>

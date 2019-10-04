@@ -8,14 +8,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-title" content="PWA" />
+  <!--
   <link rel="apple-touch-icon" sizes="72x72" href="/imagens/icones/apple-icon-72x72.png" />
   <link rel="apple-touch-icon" sizes="144x144" href="/imagens/icones/apple-icon-144x144.png" />
   <link rel="apple-touch-icon" sizes="152x152" href="/imagens/icones/apple-icon-152x152.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/imagens/icones/apple-icon-180x180.png" />
+  -->
   <link rel="stylesheet" href="/estilos/estilos.css" />
-  <script>
+  <!--<script>
+    fun
     navigator.serviceWorker.register('/sw.js');
-
     fetch('/conteudo.html')
       .then( function(res) {
         return res.text();
@@ -23,10 +25,32 @@
       .then( function(conteudo) {
         document.getElementById('conteudo').innerHTML = conteudo;
       });  
-    </script>
+    </script>-->
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-  <p><img src="/imagens/icones/android-icon-192x192.png"/></p>
-  <h1>Minha primeira PWA</h1>
-  <div id="conteudo"></div>
+  <!--<p><img src="/imagens/icones/android-icon-192x192.png"/></p>-->
+  <h1>Calculadora  Índice de Massa Corporal</h1>
+  <form>
+    <label for="username">Digite seu nome:</label>
+    <input type="text" name="username" id="username">
+  </form>
+  <form>
+      <label for="height">Digite sua altura em centímetros:</label>
+      <input type="text" name="height" id="height">
+  </form>
+  <form>
+    <label for="weight">Digite seu peso em kilogramas:</label>
+    <input type="text" name="weight" id="weight">
+  </form>  
+  <script>
+    localStorage.name = document.getElementById('username').value;
+    localStorage.height = document.getElementById('height').value;
+    localStorage.weight = document.getElementById('weight').value;
+  </script>
+  <!--<div id="conteudo"></div>-->
+  <p></p><button onclick="location.href='/conteudo.html';">Calcule</body></button></p>
 </body>

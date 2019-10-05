@@ -62,6 +62,15 @@
   </div>
   <script>
     function calcular_imc(){
+
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope:',  registration.scope);
+      }).catch(function(error) {
+        console.log('ServiceWorker registration failed:', error);
+      });
+}
+
       var nome = document.getElementById('nome_usuario').value; 
       var peso = document.getElementById('peso_usuario').value;
       var altura = document.getElementById('altura_usuario').value;
@@ -75,6 +84,12 @@
 
       document.location.href='/conteudo.html';
     }
+
+//icone do android que removi 
+//"src": "/imagens/icones/android-icon-36x36.png",
+//     "sizes": "36x36",
+//     "type": "image/png"
+//   },{
 
   </script>
 </body>

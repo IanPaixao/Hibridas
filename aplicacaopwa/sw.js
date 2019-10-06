@@ -1,12 +1,12 @@
 self.addEventListener('install', function(event) {
   console.log('SW: instalado!', event);
-  // caches.delete('cacheIMC');
-  // caches.open('meuCache').then(function(cache){
-  //   cache.addAll([
-  //     '/index.html',
-  //     'conteudo.html'
-  //   ]);
-  // });
+  //caches.delete('cache');
+  //caches.delete('Mycache');
+  caches.open('Mycache').then(function(cache){
+    cache.addAll([
+      '/'
+    ]);
+  });
 })
 
 self.addEventListener('activate', function(event) {
@@ -14,7 +14,7 @@ self.addEventListener('activate', function(event) {
 }) 
 
 self.addEventListener('fetch', function(event){
-  let resposta = caches.open('meuCache').then(function(cache){
+  let resposta = caches.open('Mycache').then(function(cache){
     return cache.match(event.request).then(function(recurso){
       if(recurso){
         console.log(`Servindo ${event.request.url} do cache`);

@@ -1,7 +1,9 @@
 # Calculadora de índice de massa corporal. (IMC)
 Repositório para trabalho da disciplina tópicos 3 aplicações híbridas.
 
-Consiste na realização de uma PWA (Progressive web app) para aprendizado. É uma simples calculadora de IMC onde o usuário digita  seu peso e sua altura e em seguida é mostrado em tela uma tabela mostrando os resultados calculados. 
+IMC (Índice de Massa Corporal) é uma medida normalmente utilizada para veriﬁcar se uma pessoa está na faixa correta do seu peso ideal. Ele é calculado pela divisão da massa do indivíduo pelo quadrado de sua altura. 
+
+A PWA desenvolvida consiste em uma aplicação que apresenta uma tela para que o usuário insira sua altura em centímetros e seu peso.  Quando o usuário insere seus dados, uma segunda tela é exibida indicando o resultado do seu IMC.
 
 O usuário pode instalar a aplicação no celular (iOS e Android), com as mesmas funcionalidades. 
 
